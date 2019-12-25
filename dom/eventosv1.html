@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciando com diretivas</title>
+    </head>
+    <body>  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div id="app">
+            <h4>{{contador}}</h4>
+            <button v-on:click="somar">Somar 1</button>
+        </div>
+        
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    contador: 0
+                },
+                methods: {
+                    somar () {
+                        this.contador+=1;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

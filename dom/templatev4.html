@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciando com diretivas</title>
+    </head>
+    <body>  
+        <!--  Resolvendo dados dentro das tags html < usando diretivas -->
+        <!-- Usa-se V-bind:propriedade Exemplo v-bind:href -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div id="app">
+            <input type="text" v-on:input="alterarTitulo">
+            <h4>{{ titulo }}</h4>
+            <p>{{ saudacao() }}</p>
+            <a v-bind:href="link">Google</a>
+        </div>
+
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    titulo: 'Iniciando com diretivas',
+                    link: 'https://google.com.br'
+                },
+                methods: {
+                    alterarTitulo(event){
+                        this.titulo = event.target.value;
+                    },
+                    saudacao () {
+                        return this.titulo
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

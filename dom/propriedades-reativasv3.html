@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciando com diretivas</title>
+    </head>
+    <body>  
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <div id="app">
+            <button v-on:click='aumentar'>Aumentar</button>
+            <button v-on:click='contador2++'>Aumentar2</button>
+            <button v-on:click='diminuir'>Diminuir</button>
+            <p>Contador: {{contador}}</p>
+            <p>Contador2: {{contador2}}</p>
+            <p>Resultado: {{resultado}}</p>
+        </div>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    contador: 0,
+                    contador2: 0
+                },
+                computed : {
+                    resultado () 
+                    {
+                        console.log('chamando computada');
+                        return this.contador >= 5 ? 'Maior igual a 5' : 'Menor que 5'
+                    }
+                },
+                watch : {
+                    contador (novo, antigo) {
+                        // Elo funcions apontam para o this corretamente.
+                        // Monitorando ações das propriedades.
+                        // Exemplo, monitorar o combo de estado, quando mudar fazer ajax para as cidades. 
+                        setTimeout( () => {
+                            this.contador=0
+                        }, 2000)
+                    }
+                },
+                methods: {
+                    aumentar() {
+                        this.contador++
+                    },
+
+                    diminuir() {
+                        this.contador--
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
