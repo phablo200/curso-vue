@@ -1,0 +1,8 @@
+html {
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+#app {
+    display: flex;
+    background-color: 'black';
+}

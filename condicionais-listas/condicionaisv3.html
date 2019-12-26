@@ -1,14 +1,25 @@
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
-
+<!-- Esse exemplo mostra a utilização da tag template -->
+<!-- Onde eu posso usa-la para a não criação de uma tag div desnecessariamente, veja o exemplo. -->
 <div id="app">
-    <p v-if="logado">Usuário logado: {{nome}}</p>
+
+    <!--
+    <div v-if="logado">
+        <p>Usuário logado: {{nome}}</p>
+        <p>Peril admin</p>
+    </div>
+    POSSO UTILIZAR, ISSO IRÁ GERAR APENAS OS PARAGRAFOS.
+    -->
+    <template v-if="logado">
+        <p>Usuário logado: {{nome}}</p>
+        <p>Peril admin</p>
+    </template>
     <p v-else-if="anonimo">Navegando como anonimo</p>
     <p v-else>Nenhum usuário logado</p>
     <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
     <input type="checkbox" v-model="anonimo">
 </div>
-
 <script>
     new Vue({
         el: '#app',

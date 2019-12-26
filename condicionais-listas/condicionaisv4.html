@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+<div id="app">
+    <template v-if="logado">
+        <p>Usuário logado: {{nome}}</p>
+        <p>Peril admin</p>
+    </template>
+    <p v-else-if="anonimo">Navegando como anonimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{logado ? 'Sair' : 'Entrar'}}</button>
+    <input type="checkbox" v-model="anonimo">
+    <hr/>
+    <!-- Lembrando que o v-show não tem v-else-show -->
+    <!-- Dica, utilizar o v-show quando tem uma ação constante na página, onde fica menos custoso pro sistema esconder o template doque ficar apagando e criando com v-if -->
+    <footer v-show="logado">
+        Desenvolvido pra você
+    </footer>
+    <footer v-show="!logado">
+        Desenvolvido pra você que é anonimo
+    </footer>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            nome: 'Maria',
+            logado: false,
+            anonimo: true
+        }
+    });
+</script>
