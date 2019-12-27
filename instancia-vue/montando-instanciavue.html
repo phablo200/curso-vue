@@ -1,0 +1,35 @@
+<meta charset="UTF-8" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app"></div>
+<script>
+   const vm = new Vue({
+        //el: '#app',
+        template: `
+            <div>
+                <h1 ref="titulo">{{aula}}</h1>
+                <p>{{modulo}}</p>
+                <button @click="alterarAula">Alterar Aula</button>
+                <button @click="alterarModulo">Alterar Módulo</button>
+            </div>
+        `,
+        data: {
+            aula: 'Montando instância vue',
+            modulo: "Módulo: Instância vue"
+        },
+        methods: {
+            alterarAula() {
+                this.aula+="#";
+                console.log(this.$refs.titulo.innerText);
+            },
+            alterarModulo () {
+                this.modulo+="#";
+            }
+        }
+    });
+
+    // Outra forma de montar o vue
+    //vm.$mount('#app');
+    // Mais uma forma de montar o vue
+    vm.$mount();
+    document.querySelector('#app').appendChild(vm.$el);
+</script>
