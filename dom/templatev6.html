@@ -10,7 +10,7 @@
             <input type="text" v-on:input="alterarTitulo">
             <h4 v-once>{{ titulo }}</h4>
             <p>{{ saudacao() }}</p>
-            <a v-bind:href="link">Google</a>
+            <a :href="link">Google</a>
             <hr>
             <p v-html="linkHtml"></p>
         </div>
