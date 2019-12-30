@@ -3,13 +3,11 @@
         
     </div>
 </template>
-
 <script>
 export default {
 
 }
 </script>
-
 <style scoped>
     .citacao {
         border: 1px solid #DDD;
