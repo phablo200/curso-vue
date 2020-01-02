@@ -1,11 +1,13 @@
 <template>
     <div class="citacao">
-        
+        <slot name="autor"/>
+        <slot name="texto"/>
+        <slot name="fonte"/>
     </div>
 </template>
 <script>
 export default {
-
+    props: ['texto']
 }
 </script>
 <style scoped>

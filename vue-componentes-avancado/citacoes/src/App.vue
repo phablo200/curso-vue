@@ -1,16 +1,23 @@
 <template>
 	<div id="app">
-		<Citacoes />
-		<Sobre />
+		<span>
+			<button @click="componente='Citacoes'">Citações</button>
+			<button @click="componente='Sobre'">Sobre</button>
+		</span>
+		<component :is="componente" />
 	</div>
 </template>
 
 <script>
 import Citacoes from './components/Citacoes'
 import Sobre from './components/Sobre'
-
 export default {
-	components: { Citacoes, Sobre }
+	components: { Citacoes, Sobre },
+	data () {
+		return {
+			componente: 'Sobre'
+		}
+	}
 }
 </script>
 
