@@ -7,7 +7,14 @@
 
 <script>
 export default {
+    created () {
+        console.log('criando o componente');
+    },
 
+    destroyed()
+    {
+        console.log('destruindo o componente');
+    }
 }
 </script>
 

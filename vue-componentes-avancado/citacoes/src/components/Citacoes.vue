@@ -8,7 +8,7 @@
         <Citacao>
             <h1 slot="autor">{{ citacoes[indice].autor }}</h1>
             <p slot="texto">{{ citacoes[indice].texto }}</p>
-            <h6 slote="conte">{{ citacoes[indice].fonte }}</h6>
+            <h6 slot="fonte">{{ citacoes[indice].fonte }}</h6>
         </Citacao>
     </div>
 </template>
@@ -43,13 +43,20 @@ export default {
             return Math.abs(this.numero % 3)
         }
     },
-    created () {
-        console.log('created');
-    },
 
+    created () {
+        console.log('criado');
+    },
     destroyed()
     {
-        console.log('destroyed');
+        console.log('destruiu');
+    },
+    activated () {
+        console.log('ativado');
+    },
+    deactivated()
+    {
+        console.log('desativado');
     }
 }
 </script>

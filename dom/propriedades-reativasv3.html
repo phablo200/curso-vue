@@ -23,11 +23,11 @@
                 computed : {
                     resultado () 
                     {
-                        console.log('chamando computada');
                         return this.contador >= 5 ? 'Maior igual a 5' : 'Menor que 5'
                     }
                 },
                 watch : {
+                    
                     contador (novo, antigo) {
                         // Elo funcions apontam para o this corretamente.
                         // Monitorando ações das propriedades.

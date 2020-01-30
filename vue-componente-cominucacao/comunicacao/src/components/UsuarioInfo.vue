@@ -10,6 +10,7 @@
 </template>
 <script>
 import barramento from '@/barramento';
+
 export default {
     props:{
         nome: {
@@ -19,6 +20,7 @@ export default {
         reiniciarFn: Function,
         idade: Number
     },
+
     data () {
         return {
 

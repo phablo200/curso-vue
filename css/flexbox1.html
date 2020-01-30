@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+        .big {
+            font-size: 1.5em;
+        }
+        .flex-container {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* Justifica o main axis */
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: left;
+            justify-content: space-evenly;
+            height: 400px;
+
+            /* Rotaciona o cros axis */ 
+            align-items: stretch;
+            align-items:baseline;
+            align-items: flex-end;
+
+            /* Alinhar multiplas linhas */
+            align-content: flex-start;
+            align-content: space-around;
+            align-content: space-between;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div class="big">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    
+</body>
+</html>
